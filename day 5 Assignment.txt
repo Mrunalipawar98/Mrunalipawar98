@@ -1,0 +1,13 @@
+ Day 5 Assignment
+
+1) creating class of car
+ ANS= class car
+      data function = model no.
+                      colour
+                      type 
+
+2) creating class of student
+ ANS= class student
+      data function = student name
+                      roll no
+                      batch
