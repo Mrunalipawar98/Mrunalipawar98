@@ -1,0 +1,15 @@
+
+Assignment day 4 c++
+
+
+1) find name language under oops,pops structure, 
+ ANS= Language under oops are - c++ , java, python, .net.
+      Language under pops are - c , pascal, fortran.
+
+
+
+2) difference between interpreter and complier
+  ANS= To convert source code into machine code we use either an interpreter or a compiler.
+       Inertpreter translate one statement at a time. Compiler sacn and translate whole program.
+       in Interpreter javascript, python are mainly use 
+       and in Compiler c , c++ , java.
