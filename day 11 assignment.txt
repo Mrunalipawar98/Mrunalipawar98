@@ -1,0 +1,76 @@
+
+1) Find the lagrest number in an array
+
+ANS=
+#include <iostream>
+using namespace std;
+int main() {
+    int arr[5];
+   for (int i=0;i<5;i++)
+{
+    cin>>arr[i];
+}
+int largest=arr[0];
+for (int i=0;i<5;i++)
+{
+    if (arr[i]>largest)
+    {
+        largest=arr[i];
+    }
+}
+cout<<"Largest element is:"<<largest;
+}
+
+
+OUTPUT=
+10
+20
+50
+30
+40
+Largest element is:50
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2) find second largest element in an array
+
+ANS=
+PROGRAM:
+
+#include <iostream>
+using namespace std;
+int main() {
+    int arr[5];
+   for (int i=0;i<5;i++)
+{
+    cin>>arr[i];
+}
+int largest=arr[0];
+int secondlargest=arr[0];
+for (int i=0;i<5;i++)
+{
+    if (arr[i]>largest)
+    {
+        secondlargest=largest;
+        largest=arr[i];
+    }
+    else
+    {
+        if(arr[i]>secondlargest and arr[i]<largest)
+        {
+            secondlargest=arr[i];
+        }
+    }
+}
+cout<<"secondlargest element is:"<<largest;
+}
+
+
+OUTPUT:
+10
+20
+30
+40
+50
+secondlargest element is:40
+
