@@ -1,0 +1,46 @@
+Find duplicate elements from array
+
+ANS=
+
+PROGRAM:
+
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cout<<"Enter number of elements:";
+    cin>>n;
+    cout<<"\n Enter elements\n";
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    int count=0;
+    cout<<"Repeating elements are";
+    for(int i=0;i<n;i++)
+     {
+         for(int j=i+1;j<n;j++)
+         {
+             
+             if(arr[i]==arr[j])
+             {
+                 cout<<arr[j]<<" ";
+             }
+         }
+     }
+
+    return 0;
+}
+
+
+OUTPUT:
+
+Enter number of elements:5
+Enter elements
+2
+1
+3
+2
+3
+Repeating elements are2 3 
