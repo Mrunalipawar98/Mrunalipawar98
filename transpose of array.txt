@@ -1,0 +1,53 @@
+transpose of array
+
+PROGRAM:
+
+#include <iostream>
+using namespace std;
+int main() {
+ int a[50][50],trans[50][50];
+ int i,j, row,col;
+ cout<<"enter the row and col";
+ cin>>row>>col;
+ cout<<"enter the array elements";
+ for(i=0;i<row;i++)
+ {
+     for(j=0;j<col;j++)
+     {
+         cin>>a[i][j];
+     }
+     cout<<"\n";
+ }
+ for(i=0;i<row;i++)
+ {
+     for(j=0;j<col;j++)
+     {
+         trans[j][i]=a[i][j];
+     }
+ }
+ for(i=0;i<col;i++)
+ {
+     for(j=0;j<row;j++)
+     {
+         cout<<trans[i][j]<<" ";
+     }
+     cout<<"\n";
+ }
+ 
+ 
+    return 0;
+}
+
+
+OUTPUT:
+
+enter the row and col 3 3
+3 3
+enter the array elements 10 20 30 40 50 60 70 80 90
+10 20 30 40 50 60 70 80 90
+
+
+
+10 40 70 
+20 50 80 
+30 60 90 
