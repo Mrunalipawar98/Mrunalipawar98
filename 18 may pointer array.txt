@@ -1,0 +1,30 @@
+ Pointer array
+
+
+Program:
+
+#include <iostream>
+using namespace std;
+int main() {
+    int arr[4] = {1,2,3,4};
+    int x=100,*ptr=arr;
+    cout<<ptr<<" "<<*ptr<<" "<<x;
+    cout<<"\n";
+    x=*++ptr;
+    cout<<ptr<<" "<<*ptr<<" "<<x;
+    cout<<"\n";
+    x=*ptr++;
+    cout<<ptr<<" "<<*ptr<<" "<<x;
+    cout<<"\n";
+    x=(*ptr)++;
+    cout<<ptr<<" "<<*ptr<<" "<<x;
+    return 0;
+}
+
+
+Output:
+
+0x7ffeeacc2f60 1 100
+0x7ffeeacc2f64 2 2
+0x7ffeeacc2f68 3 2
+0x7ffeeacc2f68 4 3
