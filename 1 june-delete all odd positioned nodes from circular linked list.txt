@@ -1,0 +1,114 @@
+1) Write a program to delete all odd position nodes from circular linked list
+
+ANS=
+
+PROGRAM:
+
+#include <iostream>
+using namespace std;
+class LinkNode
+{
+    public: int data;
+    LinkNode *next;
+    LinkNode(int data, LinkNode *first)
+    {
+        this->data = data;
+        this->next = first;
+    }
+};
+class CircularLinkedList
+{
+    public: LinkNode *head;
+    CircularLinkedList()
+    {
+        this->head = nullptr;
+    }
+    void insert(int value)
+    {
+        LinkNode *node = new LinkNode(value, this->head);
+        if (this->head == nullptr)
+        {
+            this->head = node;
+            node->next = this->head;
+        }
+        else
+        {
+            LinkNode *temp = this->head;
+            while (temp->next != this->head)
+            {
+                temp = temp->next;
+            }
+            temp->next = node;
+        }
+    }
+    void display()
+    {
+        if (this->head == nullptr)
+        {
+            cout<<"Empty Linked List"<< endl;
+        }
+        else
+        {
+            cout<<"linked List Element :";
+            LinkNode *temp = this->head;
+            while (temp !=nullptr)
+            {
+                cout<<" "<<temp->data;
+                temp = temp->next;
+                if (temp == this->head)
+                {
+                    return;
+                }
+            }
+        }
+    }
+    void deletOddPosition()
+    {
+        if (this->head == nullptr)
+        {
+            cout<<"Empty Linked List" << endl;
+        }
+        else if (this->head->next == this->head)
+        {
+            return;
+        }
+        else
+        {
+        LinkNode *temp = this->head->next;
+        LinkNode *back = this->head;
+        while (temp != nullptr && temp != this->head)
+        {
+            back->next = temp->next;
+            back = temp->next;
+            if (back == this->head)
+            {
+                return;
+            }
+            temp = back-> next;
+        }
+    }
+ }
+}; 
+int main() {
+   CircularLinkedList *cll = new CircularLinkedList();
+   cll->insert(10);
+   cll->insert(24);
+   cll->insert(36);
+   cll->insert(55);
+   cll->insert(68);
+   cll->insert(98);
+   cout<<"Before delete " << endl;
+   cll->display();
+   cll->deletOddPosition();
+   cout<<"\nAfter delete odd position nodes"<< endl;
+   cll->display();
+    return 0;
+}
+
+
+OUTPUT:
+
+Before delete 
+linked List Element : 10 24 36 55 68 98
+After delete odd position nodes
+linked List Element : 10 36 68
