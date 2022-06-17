@@ -1,0 +1,126 @@
+1) Rearrange Linkedlist in increasing order
+
+ANS=
+
+PROGRAM:
+
+// Rearrange linked list in increasing order
+#include <iostream>
+using namespace std;
+class LinkNode
+{
+    public:
+    int data;
+    LinkNode *next;
+    LinkNode(int data)
+    {
+        this->data = data;
+        this->next = nullptr;
+    }
+};
+class SingleLL
+{
+    public:
+    LinkNode *head;
+    SingleLL()
+    {
+        this->head = nullptr;
+    }
+    void onsert(int value)
+    {
+        LinkNode *node = new LinkNode(value);
+        if (this->head == nullptr)
+        {
+            this->head = node;
+        }
+        else
+        {
+            LinkNode *temp = this->head;
+            while (temp->next != nullptr)
+            {
+                temp =temp->next;
+                
+            }
+            temp->next = node;
+        }
+    }
+    void display()
+        {
+        if (this->head != nullptr)
+        {
+            LinkNode *temp = this->head;
+            while (temp != nullptr)
+            {
+                cout<<" "<< temp->data;
+                temp = temp->next;
+            }
+        }
+        else
+        {
+            cout<<"Empty Linked list" << endl;
+        }
+    }
+    void arrange(LinkNode *element)
+    {
+        if (this->head == nullptr)
+        {
+            this->head = element;
+        }
+        else if (this->head->data >= element->data)
+        {
+            element->next = this->head;
+            this->head = element;
+        }
+        else
+        {
+            LinkNode *temp = this->head;
+            while (temp->next != nullptr &&
+            temp->next->data < element->data)
+            {
+                temp = temp->next;
+            }
+            element->next = temp->next;
+            temp = temp->next;
+        }
+    }
+    void sortElement()
+    {
+        if (this->head == nullptr)
+        {
+            return;
+        }
+        LinkNode *temp = this->head;
+        LinkNode *hold = nullptr;
+        this->head = nullptr;
+        while (temp != nullptr)
+        {
+            hold = temp;
+            temp = temp->next;
+            hold->next = nullptr;
+            this->arrange(hold);
+        }
+    }
+};
+int main() {
+    SingleLL *sll = new SingleLL();
+    sll->onsert(2);
+    sll->onsert(10);
+    sll->onsert(5);
+    sll->onsert(14);
+    cout << "Before Sort" << endl;
+    sll->display();
+    cout<< "\nAfter Sort" << endl;
+    sll->sortElement();
+    sll->display();
+
+
+    return 0;
+}
+
+
+
+OUTPUT:
+Before Sort
+ 2 10 5 14
+After Sort
+ 2 5 10 14
